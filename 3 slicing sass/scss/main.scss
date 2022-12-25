@@ -1,0 +1,168 @@
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+// VARIABLE
+$primaryColor: #3d4ec4;
+$secondaryColor: #2c2f37;
+$tertierColor: #ffffff;
+
+// STYLE
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(../asset/Group\ 1.png);
+  background-size: 150vh;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: #fff9f2;
+}
+
+.container {
+  .navbar {
+    ul li:nth-child(1) a {
+      background-color: $primaryColor;
+      color: $tertierColor !important;
+    }
+  }
+}
+
+.costum-nav {
+  .navbar-brand {
+    img {
+      width: 120px;
+    }
+  }
+}
+
+#navbarNav {
+  .navbar-nav {
+    .nav-item {
+      a {
+        color: $secondaryColor;
+      }
+    }
+  }
+}
+
+.row:nth-child(3) {
+  .col {
+    button {
+      background-color: $primaryColor;
+      color: $tertierColor;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .row {
+    .col {
+      padding-top: 130px;
+      //   background-color: red;
+      //   height: 40vh;
+      color: $primaryColor;
+      h2 {
+        font-size: 44px;
+      }
+      h1 {
+        font-family: "Luckiest Guy", cursive;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 49.3333px;
+        line-height: 49px;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .row:nth-child(2) {
+    .col {
+      p {
+        color: $secondaryColor;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.container {
+  .row {
+    .col {
+      img {
+        width: 35px;
+      }
+    }
+  }
+}
+
+// TABLET VIEW
+@media screen and (max-width: 992px) {
+  .row:nth-child(2) {
+    .col {
+      p {
+        color: $secondaryColor;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// END TABLET VIEW
+
+// SMARTPHONE VIEW
+
+@media screen and (max-width: 476px) {
+  body {
+    background-size: 80vh;
+  }
+  .row {
+    .col {
+      padding-top: 90px;
+      //   background-color: red;
+      //   height: 40vh;
+      color: $primaryColor;
+      h2 {
+        font-size: 36px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 49px;
+        letter-spacing: 3px;
+        text-align: center;
+      }
+    }
+  }
+
+  .row:nth-child(2) {
+    .col {
+      p {
+        color: $secondaryColor;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+
+  .row:nth-child(3) {
+    div {
+      text-align: center;
+      button {
+        margin-top: 44px !important;
+      }
+    }
+  }
+
+  // footer
+  .footer {
+    .container {
+      .row {
+        .col {
+          text-align: center;
+          padding-top: 50px;
+        }
+      }
+    }
+  }
+}
+
+// END SMARTPHONE VIEW

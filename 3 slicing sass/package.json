@@ -1,0 +1,12 @@
+{
+  "name": "3-slicing-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "sass --watch scss/main.scss css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dodi batubara",
+  "license": "ISC"
+}
