@@ -1040,6 +1040,10 @@ video {
     margin-top: 0px;
   }
 
+  .sm\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .sm\:flex {
     display: flex;
   }
