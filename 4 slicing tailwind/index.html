@@ -10,33 +10,44 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <!-- END GOOGLE FONT -->
-    <link rel="stylesheet" href="dist/output.css" />
+
+    <!-- DATE PICKER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <!-- END DATE PICKER -->
+
+    <!-- SWIPER JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="./swiper.css" />
+
+    <!-- END SWIPER JS -->
+    <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body class="bg-secondary">
     <div class="header">
-      <!-- NAVBAR --> 
-      <div class="navbar container mx-auto px-4 grid md:grid-cols-2 mt-8">
+      <!-- NAVBAR -->
+      <div class="navbar container mx-auto px-4 grid md:grid-cols-2 mt-8 py-3 items-center">
         <div class="flex">
           <h1 class="text-4xl font-bold">Comunity</h1>
-          <div>
-            <span class="bg-primary rounded-full px-2 md:px-3 pb-1 text-xs">Event</span>
+          <div class="">
+            <span class="bg-primary rounded-full px-2 md:px-3 text-xs flex h-5 pb-0.5 items-center">Event</span>
           </div>
         </div>
 
         <ul class="md:flex md:justify-end md:items-center text-center md:text-start">
-          <li class="mr-12 mt-6 sm:mt-0 mb-2">
+          <li class="mr-12 mt-6 sm:mt-0 mb-2 pt-2 px-3">
             <a href="" class="ml-7 md:ml-0">Member login</a>
           </li>
 
-          <li class="border px-3 pb-1 rounded-full bg-primary border-primary md:mr-4">
-            <button>Become Member</button>
+          <li class="border px-4 py-2 rounded-full bg-primary border-primary md:mr-4">
+            <button class="">Become Member</button>
           </li>
         </ul>
       </div>
 
       <!-- END nAVBAR -->
 
-      <!-- HERO 1 --> 
+      <!-- HERO 1 -->
 
       <div class="container mx-auto px-4">
         <!-- ROW -->
@@ -46,36 +57,36 @@
             <h1 class="md:text-5xl text-2xl font-bold">Build your networking by join our community event</h1>
             <p class="md:text-base text-xs lg:my-10 my-5">We are internatonal organization which brings together all sectors of the travel and tourism industry. Representing the insdustry's managers and executives</p>
             <div>
-              <button class="bg-fourth lg:px-5 px-3 py-2 lg:text-base text-sm rounded-full flex items-center justify-between animate-bounce">
+              <button class="bg-fourth lg:px-5 px-3 py-2 lg:text-base text-sm rounded-full flex items-center justify-between">
                 Join our comunity
                 <img src="asset/icon/arrow-right.png" alt="" class="ml-3 w-3" />
               </button>
             </div>
           </div>
           <!-- COL -->
-          <div class="xl:pl-28 lg:grid lg:pl-4 lg:mt-0 mt-8">
+          <div class="xl:pl-28 lg:grid lg:pl-4 lg:mt-0 mt-14">
             <div class="lg:text-start text-center">
-              <button class="bg-primary px-3 rounded-full lg:w-48 md:text-base text-sm md:py-0 h-9 animate-pulse">Our opcoming event</button>
+              <button class="bg-fourth px-3 rounded-full lg:w-48 md:text-base text-sm md:py-0 h-9">Our upcoming event</button>
             </div>
 
-            <div class="mt-4 flex gap-2 sm:text-base text-sm">
-              <div class="card bg-fourth rounded-xl overflow-hidden">
+            <div class="lg:mt-4 mt-8 flex gap-2 sm:text-base text-sm">
+              <div class="card bg-fifth rounded-xl overflow-hidden shadow-lg">
                 <img src="asset/img/1.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2" />
                     03 June 2022
                   </span>
                 </div>
               </div>
 
-              <div class="card bg-fourth rounded-xl overflow-hidden">
+              <div class="card bg-fifth rounded-xl overflow-hidden shadow-lg">
                 <img src="asset/img/3.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2" />
                     03 June 2022
                   </span>
                 </div>
@@ -88,27 +99,59 @@
 
       <!-- HERO 2 -->
 
-      <div class="container mx-auto px-4 md:mt-24 mt-14">
+      <div class="container mx-auto px-4 md:mt-[132px] mt-[65px] lg:pb-9">
         <!-- ROW -->
-        <div class="grid lg:grid-cols-2">
+        <div class="grid grid-cols-12 lg:gap-20 xl:gap-10">
           <!-- COL -->
-          <div class="">
-            <div class="relative">
-              <div class="lg:w-96 h-[90%] bg-fourth lg:top-[5%] lg:absolute rounded-xl"></div>
-              <img src="asset/img/8.jpg" alt="" class="rounded-xl z-[10] relative lg:w-[79%] lg:left-5 lg:mx-0 mx-auto" />
-            </div>
+          <div class="col-span-12 lg:col-span-6">
+            <div class="">
+              <!-- relative -->
+              <!-- rounded-xl z-[10] relative lg:w-[79%] lg:left-5 lg:mx-0 mx-auto overflow-hidden -->
 
-            <div class="flex justify-center lg:w-[79%] md:w-[87%] lg:ml-5 mt-4 mx-auto">
-              <img src="asset/icon/Ellipse 1 (1).png" alt="" />
-              <img src="asset/icon/Ellipse 2.png" alt="" />
-              <img src="asset/icon/Ellipse 3.png" alt="" />
+              <!-- SWIPER -->
+              <!-- Slider main container -->
+              <div class="swiper lg:w-[79%] w-[70%]">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper rounded-xl">
+                  <!-- Slides -->
+                  <div class="swiper-slide rounded-xl">
+                    <div class="image_wraper rounded-xl">
+                      <img src="asset/img/3.jpg" alt="" class="rounded-xl" />
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide rounded-xl">
+                    <div class="image_wraper rounded-xl">
+                      <img src="asset/img/2.jpg" alt="" class="rounded-xl" />
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide rounded-xl">
+                    <div class="image_wraper rounded-xl">
+                      <img src="asset/img/1.jpg" alt="" class="rounded-xl" />
+                    </div>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev hidden"></div>
+                <div class="swiper-button-next hidden"></div>
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+              </div>
+              <!-- END SWIPER -->
+
+              <!-- <img src="asset/img/8.jpg" alt="" class="rounded-xl z-[10] relative lg:w-[79%] lg:left-5 lg:mx-0 mx-auto" /> -->
             </div>
           </div>
 
           <!-- COL -->
-          <div class="lg:mt-0 mt-5">
-            <div class="text-base p-5">
-              <h2 class="font-bold text-3xl">
+          <div class="lg:mt-0 mt-14 col-span-12 lg:col-span-6">
+            <div class="text-base p-2">
+              <h2 class="font-bold text-[32px] leading-[44px]">
                 Ready to join our next <br />
                 comunity event?
               </h2>
@@ -145,11 +188,11 @@
 
       <!-- CONTENT -->
 
-      <div class="content mt-12 bg-gradient-to-br from-primary to-fourth py-16">
+      <div class="content bg-fifth lg:mt-[110px] mt-[55px] lg:py-[96px] py-[48px]">
         <!-- ROW -->
         <!-- COL -->
         <div class="container mx-auto px-4">
-          <h2 class="font-bold text-3xl text-center">
+          <h2 class="font-bold lg:text-[32px] text-[28px] text-center">
             Unlock your potential to <br />
             grow your relation
           </h2>
@@ -196,43 +239,45 @@
 
       <!-- CONTENT 2 -->
 
-      <div class="md:mt-20 mt-10">
+      <div class="md:mt-[110px] mt-10">
         <!-- ROW -->
         <div class="container mx-auto px-4">
           <!-- COL -->
           <div>
-            <h2 class="text-2xl font-bold">
+            <h2 class="text-[32px] font-bold">
               Discover our <br />
               amazing event
             </h2>
           </div>
 
           <!-- ROW 2 -->
-          <div class="grid md:grid-cols-2 md:mt-5 mt-4">
+          <div class="grid grid-cols-12 md:mt-5 mt-4">
             <!-- COL -->
-            <div class="pr-20">
+            <div class="pr-20 lg:col-span-6 col-span-12">
               <p class="">We are international organization witch brings together all sector of the travel and tourism industry. Representing the industry's manager and executives</p>
             </div>
 
             <!-- COL -->
-            <div class="md:pl-20 flex items-center">
-              <div class="flex bg-gradient-to-r from-fourth to-primary px-3 py-4 rounded-xl md:mt-0 mt-4 md:w-full">
-                <img src="asset/icon/calender2.png" alt="" />
-                <span class="ml-4">Search By Date 'DD/MM/YY'</span>
+            <div class="lg:pl-20 pl-0 flex rounded-xl lg:col-span-6 col-span-12 lg:mt-0 mt-5">
+              <div class="flex lg:justify-between items-center px-3 py-0 rounded-xl md:mt-0 lg:w-full w-[90%] mx-auto bg-fifth mt-4">
+                <img src="asset/icon/calender2.svg" alt="" class="w-[25px] h-[25px] mr-1" />
+                <form action="" class="m-0 p-0 w-full">
+                  <input type="datetime" id="date" class="w-full py-4 pl-4 bg-fifth" name="date" placeholder="Search by date 'DD/MM/YYYY' " />
+                </form>
               </div>
             </div>
           </div>
 
           <!-- ROW -->
-          <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-7 mt-14">
+          <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-7 lg:mt-14 mt-16">
             <!-- COL -->
             <div>
-              <div class="card bg-gradient-to-r from-fourth to-primary rounded-xl overflow-hidden">
+              <div class="card bg-fifth shadow-lg rounded-xl overflow-hidden">
                 <img src="asset/img/5.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2 w-4" />
                     03 June 2022
                   </span>
                 </div>
@@ -240,12 +285,12 @@
             </div>
             <!-- COL 2 -->
             <div>
-              <div class="card bg-gradient-to-r from-fourth to-primary rounded-xl overflow-hidden">
+              <div class="card bg-fifth shadow-lg rounded-xl overflow-hidden">
                 <img src="asset/img/6.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2 w-4" />
                     03 June 2022
                   </span>
                 </div>
@@ -253,12 +298,12 @@
             </div>
             <!-- COL3 -->
             <div>
-              <div class="card bg-gradient-to-r from-fourth to-primary rounded-xl overflow-hidden">
+              <div class="card bg-fifth shadow-lg rounded-xl overflow-hidden">
                 <img src="asset/img/7.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2 w-4" />
                     03 June 2022
                   </span>
                 </div>
@@ -266,12 +311,12 @@
             </div>
             <!-- COL4 -->
             <div>
-              <div class="card bg-gradient-to-r from-fourth to-primary rounded-xl overflow-hidden">
+              <div class="card bg-fifth shadow-lg rounded-xl overflow-hidden">
                 <img src="asset/img/8.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2 w-4" />
                     03 June 2022
                   </span>
                 </div>
@@ -284,12 +329,12 @@
           <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-7 mt-14">
             <!-- COL -->
             <div>
-              <div class="card bg-fourth rounded-xl overflow-hidden">
+              <div class="card bg-fifth shadow-lg rounded-xl overflow-hidden">
                 <img src="asset/img/2.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2 w-4" />
                     03 June 2022
                   </span>
                 </div>
@@ -297,12 +342,12 @@
             </div>
             <!-- COL 2 -->
             <div>
-              <div class="card bg-fourth rounded-xl overflow-hidden">
+              <div class="card bg-fifth shadow-lg rounded-xl overflow-hidden">
                 <img src="asset/img/10.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2 w-4" />
                     03 June 2022
                   </span>
                 </div>
@@ -310,12 +355,12 @@
             </div>
             <!-- COL3 -->
             <div>
-              <div class="card bg-fourth rounded-xl overflow-hidden">
+              <div class="card bg-fifth shadow-lg rounded-xl overflow-hidden">
                 <img src="asset/img/9.jpg" alt="" class="w-full" />
                 <div class="sm:px-8 px-2 py-5">
                   <p class="mb-2">Lunch with hotel and villas owner in bali</p>
                   <span class="flex">
-                    <img src="asset/icon/calender.png" alt="" class="mr-2 w-4" />
+                    <img src="asset/icon/calender.svg" alt="" class="mr-2 w-4" />
                     03 June 2022
                   </span>
                 </div>
@@ -330,19 +375,17 @@
 
       <!-- CONTECT 3 -->
 
-      <div class="mt-14 bg-gradient-to-br from-primary to-fourth sm:py-16 py-10">
-        <h2 class="font-bold text-center text-2xl">
+      <div class="mt-[76px] bg-fifth sm:py-[110px] py-10">
+        <h2 class="font-bold text-center text-[32px]">
           Interest to get our nex <br />
           information? subscribe now!
         </h2>
 
-        <div class="bg-fourth p-4 sm:w-[35%] w-[70%] mx-auto mt-4 rounded-lg flex justify-between animate-pulse">
-          <div>
-            <span>S.pdigital@example.com</span>
-          </div>
-          <div>
-            <button>
-              <img src="asset/icon/arrow-right2.png" alt="" />
+        <div class="sm:w-[35%] w-[70%] mx-auto mt-4 rounded-lg relative">
+          <input type="text" placeholder="S.pgdigital@example.com" class="p-4 w-full mx-auto rounded-lg flex justify-between bg-secondary" />
+          <div class="absolute top-[25%] right-[4%]">
+            <button class="">
+              <a href=""><img src="asset/icon/arrow-right2.png" alt="" /></a>
             </button>
           </div>
         </div>
@@ -354,13 +397,13 @@
 
       <div class="container mx-auto px-4">
         <!-- ROW -->
-        <div class="grid lg:grid-cols-4 md:grid-cols-2 md:p-16 p-6 gap-8 sm:text-start text-center">
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 md:py-[129px] py-[60px] p-6 gap-8 sm:text-start text-center">
           <!-- COL -->
           <div>
             <div class="flex sm:justify-start justify-center">
-              <h4 class="text-3xl font-bold">Comunity</h4>
-              <div>
-                <span class="bg-primary rounded-full px-2 md:px-3 pb-1 text-xs">Event</span>
+              <h4 class="text-4xl font-bold">Comunity</h4>
+              <div class="">
+                <span class="bg-primary rounded-full px-2 md:px-3 text-xs flex items-center pb-0.5 h-5">Event</span>
               </div>
             </div>
 
@@ -376,7 +419,7 @@
           </div>
           <!-- COL 2 -->
           <div>
-            <h5 class="text-2xl font-bold">Events</h5>
+            <h5 class="text-xl font-bold">Events</h5>
 
             <div class="mt-4">
               <p>Lunch with hotel and villas ...</p>
@@ -389,7 +432,7 @@
 
           <!-- COL 3 -->
           <div>
-            <h5 class="text-2xl font-bold">Company</h5>
+            <h5 class="text-xl font-bold">Company</h5>
 
             <div class="mt-4">
               <ul>
@@ -404,16 +447,16 @@
 
           <!-- COL 4 -->
           <div>
-            <h5 class="text-2xl font-bold">Contac us</h5>
+            <h5 class="text-xl font-bold">Contac us</h5>
 
             <div class="mt-4">
               <div class="flex sm:justify-start justify-center">
-                <img src="asset/icon/Email.png" alt="" class="w-5 mr-2" />
+                <img src="asset/icon/Email.svg" alt="" class="w-5 mr-2" />
                 <span>contact@comunity.org</span>
               </div>
 
               <div class="flex mt-4 sm:justify-start justify-center">
-                <img src="asset/icon/Phone.png" alt="" class="w-5 mr-2" />
+                <img src="asset/icon/phone.svg" alt="" class="w-5 mr-2" />
                 <span>(+62) 87702508077</span>
               </div>
             </div>
@@ -423,10 +466,10 @@
       </div>
 
       <!-- FOOTER 2 -->
-      <div class="container mx-auto px-4 pb-4">
+      <div class="container mx-auto px-4 pb-6">
         <hr />
 
-        <div class="mt-5 sm:flex sm:justify-between text-center">
+        <div class="mt-6 sm:flex sm:justify-between text-center">
           <p>Copyright &copy; Community Event</p>
 
           <p>All Rights Reserved | <a href="" class="underline">Term and condition</a> | <a href="" class="underline">Privacy Policy</a></p>
@@ -437,5 +480,20 @@
 
       <!-- <div class="mb-52"></div> -->
     </div>
+
+    <!-- SWIPER SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- SWIPER JS -->
+    <script src="./swiper.js"></script>
+    <!-- END SWIPER SCRIPT -->
+
+    <!-- DATEPICKER -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+      // Otherwise, selectors are also supported
+      flatpickr("#date", {});
+    </script>
   </body>
 </html>

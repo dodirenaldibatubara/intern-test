@@ -8,6 +8,7 @@ module.exports = {
         secondary: "#FAF8ED",
         third: "#2D3134",
         fourth: "#FFD482",
+        fifth: "#fffdfd",
       },
       fontFamily: {
         poppins: ["Poppins"],
