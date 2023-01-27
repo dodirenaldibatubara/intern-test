@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax with status</title>
+  </head>
+  <body>
+    <!-- Disini kita akan belajar tentang status di ajax. jadi ada beberapa status ajax yang akan muncul pada saat kita fetch , dan kit bisa megetahui statusnya degan properti ajax.status, dan bisa membuat kondisi jika status eror maka kita memberi pesan eror , jika succes, maka kita akan menampilkan isi dari json kita. -->
+
+    <h2 id="header"></h2>
+
+    <script>
+      // parameter json di sini berbeda dengan paramter json di bawah yang di dalam function karene parameter json di sini ialah hanya parameter penampung data (pda hal ini object ) yang akan di tampilkan
+
+      function displayResponse(json) {
+        const header = document.getElementById("header");
+        header.textContent = json.response;
+      }
+
+      const ajax = new XMLHttpRequest();
+
+      //   ready state change ialah di mana status state pada ajax (atau sampai mana proses ajax yang kita buat. ) untuk mengetahuinya kita bisa membuat fungsi listener atau on ready statechange.  untuk mengetahi status prosesnya
+
+      //   cara 1
+      //   ajax.addEventListener("readystatechange", function () {
+      //     console.log(`ready state change ${ajax.readyState}`);
+      //   });
+
+      //   cara 2
+
+      ajax.onreadystatechange = function () {
+        console.log(`ready state change ${ajax.readyState}`);
+      };
+
+      ajax.open("GET", "hello.json");
+
+      ajax.addEventListener("load", function () {
+        if (ajax.status === 200) {
+          const json = JSON.parse(ajax.responseText);
+          displayResponse(json);
+        } else {
+          displayResponse({
+            response: `terjadi kesalahan status ${ajax.status}`,
+          });
+        }
+      });
+
+      ajax.send();
+    </script>
+  </body>
+</html>

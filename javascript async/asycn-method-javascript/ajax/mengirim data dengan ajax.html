@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mengirim data dengan ajax</title>
+  </head>
+  <body>
+    <h1 id="response"></h1>
+
+    <form>
+      <label for="username">
+        username :
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+      <br />
+      <br />
+
+      <label for="password">
+        password :
+        <input type="password" name="password" id="password" />
+      </label>
+
+      <input type="button" id="login" value="login" />
+    </form>
+
+    <script>
+      // buat fungsi jika tombol login di klik, maka lakukan perintah untuk post data yang di input, ke endpoint.
+      //
+      function doLogin() {
+        // buat object ajax baru
+        const ajax = new XMLHttpRequest();
+        // masukkan alamat API yang akan di tuju
+        ajax.open("POST", "https://dodirenaldi.free.beeceptor.com/posts");
+
+        // buat fungsi untuk meletakkan dimana letak respon dari api
+        ajax.onload = function () {
+          const response = document.getElementById("response");
+
+          response.innerHTML = ajax.responseText;
+        };
+
+        // ini gunanya untuk memberitahu format file apa yang akan kita kirim (request). dan ini wajib di buat
+        ajax.setRequestHeader("Content-Type", "aplication/json");
+
+        // buat input yang di isi user ke dalam object. dan ambil nilainya
+        const json = {
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        };
+
+        // kirim ajax.(object)
+        ajax.send(JSON.stringify(json));
+      }
+
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>

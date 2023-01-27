@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request API</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">
+        username :
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+      <br />
+      <br />
+
+      <label for="password">
+        password :
+        <input type="password" name="password" id="password" />
+      </label>
+
+      <input type="button" id="login" value="login" />
+    </form>
+
+    <h1 id="response"></h1>
+
+    <script>
+
+        // kita akan melakukan post dan juga menerima respin dari server, dengan fetch api
+
+        function doLogin(){
+
+            // buat object request dan parameternya ialah endpoind dan object apa yang akan kita kirimdan terima
+            const request = new Request("https://dodirenaldi.free.beeceptor.com/posts",{
+
+                method : "POST",
+                headers : {"Content-type" : "application/json",
+                            "Accept" : "application/json"
+                },
+                // body berisi dengan object yang akan kita kirimkan dan kita konvarsi ke string sebelum di kirimkan
+                body : JSON.stringify({
+                    username : document.getElementById('username').value,
+                    password : document.getElementById('password').value,
+                })
+
+            });
+
+            // kirim request ke server => pada hal ini di masukkan ke variabel response karena kita akan sekaligus, mengirim request ke server, sekaligus kita akan menerima respon dari server nantinya, karena itulah kita memasukkannya ke dalam variable response
+
+            const response = fetch(request);
+
+            response
+            // ini berfungsi untuk mengubah response menjadi object json seperti halnya JSON.parse di ajax
+            .then((response) => response.json())
+            // tampilkan json ke dalam halaman yang kita inginkan
+            .then(function (json){
+                document.getElementById('response').innerHTML = json.status;
+            })
+        }
+        document.getElementById('login').onclick = doLogin;
+    </script>
+
+  </body>
+</html>

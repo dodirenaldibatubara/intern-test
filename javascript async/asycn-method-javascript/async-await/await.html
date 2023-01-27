@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Await</title>
+  </head>
+  <body>
+    <script>
+      // contoh  kita akan mengambil daata dari api dengan menggunakan fetch
+
+      function getProduct() {
+        const request = new Request("product1.json", {
+          method: "GET",
+        });
+
+        const response = fetch(request);
+
+        return response.then((response) => response.json());
+      }
+
+      getProduct().then((product) => console.log(product));
+
+      //   nah di atas kita sudah dapat object yang berisi data" product. jika kita ingin mengambil salah satu data saja maka kita akan menggunakan function lagi. seperti promise kembali jika secara manual. tetapi nanti akan kita ganti dengan menggunakan await agar lebih simple.
+
+      //   cara manual mengambil data name pada product. yaitu jika kita ingin dia dalam bentuk promise lagi . maka kita harus membuat function promise lagi. dan masalahnya, data dari object kita juga promise, jadi dua kali promise . dan ini nanti bisa di handle dengan await.
+
+      // cara manual menggunakan function promise
+
+      function getProductNamePromise() {
+        return new Promise(function (resolve, reject) {
+          // iniberfungsi untuk mengambil data object yang di atas secara keseluruhan
+          getProduct()
+            // ini berfungsi untuk mengambil data dari promisenya dan . name ini berfungi untuk mengmbil data name saja , pada object
+            .then((productName) => resolve(productName.name))
+            .catch((error) => reject(error));
+        });
+      }
+      getProductNamePromise().then((nameProduct) => console.log(nameProduct));
+
+      //   nah dengan ini kita berhasil mendapatkan data name product
+
+      //   end cara manual menggunakan promise function
+
+      // cara menggunakan AWAIT => AWAIT hanya bisa digunakan jisa function yang akan kita gunakan ialah async
+
+      //   di depan function wajib di tuliskan async agar await bisa di gunakan
+      async function getProductNameAsync() {
+        // kita baut function get product diatas kedalam variable agar gampang di gunakan
+        // dan fungsi await di sini ialah seperti promise diatas, yaitu menunggu jika data sudah di siapkan barulah dia di eksekusi, tanpa harus menjabarkannya denegan promise
+
+        const product = await getProduct();
+        return product.name;
+
+        // untuk menangani error (pengganti catch pada manual promise) kita bisa menggunakan try catch contoh kode dibawah
+
+        // try {
+        //   const product = await getProduct();
+        //   return product.name;
+        // } catch (error) {
+        //   return "product not faound";
+        // }
+      }
+
+      getProductNameAsync().then((productName) => console.log(productName));
+    </script>
+  </body>
+</html>

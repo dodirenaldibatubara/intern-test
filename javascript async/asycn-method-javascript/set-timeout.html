@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set time out</title>
+  </head>
+  <body>
+    <h1>Belajar javascript Asyncronus</h1>
+
+    <p>Method async yang tersedia pada javascript salah satunya ialah set timeout</p>
+
+    <p>
+      artinya di sini ialah kita membuat program yang bukan syncronus yaitu porgram di buat tidak mengikuti urutan default. pada contoh di bawah kita akan membuat elemen baru pada javascript, dan element itu akan di eksekusi pada saat yang
+      kita butuhkan, pada kasus ini kita set waktu sebanyak 5000 ms, artinya kode akan di eksekusi 5 detik kemudian, setelah dia di jalankan.
+    </p>
+
+    <script>
+      const addElement = () => {
+        let header = document.createElement("h1");
+        header.innerHTML = "coba set time out";
+
+        document.body.appendChild(header);
+      };
+
+      setTimeout(addElement, 3000);
+      // document.writeln(setTime()) ;
+
+      const judul = () => {
+        let text = document.createElement("h2");
+        text.innerHTML = "percobaan set time out 2";
+
+        document.body.appendChild(text);
+      };
+
+      setTimeout(judul, 2000);
+    </script>
+  </body>
+</html>

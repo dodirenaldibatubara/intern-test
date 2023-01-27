@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Promise</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>id :</td>
+        <td id="id"></td>
+      </tr>
+
+      <tr>
+        <td>Name :</td>
+        <td id="name"></td>
+      </tr>
+
+      <tr>
+        <td>Price :</td>
+        <td id="price"></td>
+      </tr>
+    </table>
+
+    <script>
+      function getProduct(product) {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", `${product}.json`);
+
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(`terjadi error ${ajax.status}`);
+            }
+          };
+          ajax.send();
+        });
+      }
+      // .then ialah method yang berfungsi untuk mengambil data dari promise
+      getProduct("product")
+        .then(function (response) {
+          return JSON.parse(response);
+        })
+        .then(function (json) {
+          document.getElementById("id").innerHTML = json.id;
+          document.getElementById("name").innerHTML = json.name;
+          document.getElementById("price").innerHTML = json.price;
+        })
+
+        .catch(function (error) {
+          document.getElementById("id").textContent = error;
+          document.getElementById("name").textContent = error;
+          document.getElementById("price").textContent = error;
+        })
+
+        .finally(function () {
+          console.log("finally");
+        });
+    </script>
+  </body>
+</html>

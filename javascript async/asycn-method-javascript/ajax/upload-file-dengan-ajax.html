@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mengirim data dengan ajax</title>
+  </head>
+  <body>
+    <h1 id="response"></h1>
+
+    <form>
+      <label for="username">
+        username :
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+      <br />
+      <br />
+
+      <label for="name">
+        name :
+        <input type="text" name="name" id="name" />
+      </label>
+      <br />
+      <br />
+      <br />
+      <label for="profile">
+        profile :
+        <input type="file" name="profile" id="profile" />
+      </label>
+      <br />
+      <br />
+      <br />
+      <input type="button" id="register" value="register" />
+    </form>
+
+    <script>
+      // mengirim data form menggunakan ajax
+
+      // baut funtion untuk mengirim data form menggunakan ajax
+      function doRegister() {
+        const ajax = new XMLHttpRequest();
+
+        ajax.open("POST", "https://dodirenaldi.free.beeceptor.com/posts");
+
+        ajax.addEventListener("load", function () {
+          const response = document.getElementById("response");
+          response.innerHTML = ajax.response;
+        });
+
+        // buat object form yang akan kirimkan, dan kita ambil value nya dari form yang akan di input oleh user
+
+        const form = new FormData();
+
+        form.append("username", document.getElementById("username").value);
+        form.append("name", document.getElementById("name").value);
+
+        // untuk mengambil data dari files agak sedikit berbeda yaitu dengan cara beriut
+        // dan untuk files ini perlakuannya mirip seperi aray dimana jika dia multiple maka dia memiliki item, dan ikta bisa memanggil item ke berapa yang akan di kirimkan ke server
+        const files = document.getElementById("profile").files;
+        const firstFile = files.item(0);
+
+        form.append("profile", firstFile);
+
+        ajax.send(form);
+      }
+
+      document.getElementById("register").onclick = doRegister;
+    </script>
+  </body>
+</html>

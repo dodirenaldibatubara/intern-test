@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rewuest API</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">
+        username :
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+      <br />
+      <br />
+
+      <label for="password">
+        password :
+        <input type="password" name="password" id="password" />
+      </label>
+
+      <input type="button" id="login" value="login" />
+    </form>
+
+    <h1 id="response"></h1>
+
+    <script>
+      function doLogin() {
+        const request = new Request("https://pie.dev/post", {
+          method: "Post",
+          headers: {
+            "Content-type": "application/json",
+            Accept: "application/json",
+          },
+
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+        const response = fetch(request);
+
+        response
+          .then((response) => response.json())
+          .then(function (json) {
+            document.getElementById("response").textContent = json.headers.Host;
+          }); 
+      }
+
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>

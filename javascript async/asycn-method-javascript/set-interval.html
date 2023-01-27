@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set interval</title>
+  </head>
+  <body>
+    <h1>Belajar javascript Asyncronus</h1>
+
+    <p>Method async yang tersedia pada javascript salah satunya ialah setInterval</p>
+
+    <p>
+      SetInterval ialah sebuah function yang membungkinkan kita memanggil function secara berkali kali dengan interval waktu yang kita tentukan sendiri. contohnya kita bisa menampilkan layaknya jam digital ynag setiap detik angkanya akan
+      berubah
+    </p>
+
+    <h2 id="header"></h2>
+
+    <script>
+      const time = () => {
+        const header = document.getElementById("header");
+        header.innerHTML = new Date().toString();
+      };
+
+      setInterval(time, 0);
+
+      const judul = () => {
+        const h1 = document.createElement("h1");
+
+        h1.innerHTML = "coba set time out 1";
+
+        document.body.appendChild(h1);
+      };
+
+      setTimeout(judul, 2000);
+    </script>
+  </body>
+</html>

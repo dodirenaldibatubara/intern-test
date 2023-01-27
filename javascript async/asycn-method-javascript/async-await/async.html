@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asycn</title>
+  </head>
+  <body>
+    <!-- async await ialah method yang di gunakan untuk mempermudah kita dalam pembuatan promise. jdi jika menggunakan asyn await, kita tidak perlu membuat promise manual, karena otomatis sudah di buatkan oleh method nya -->
+
+    <script>
+      // cara ini ialah cara manual menggunakan promise manual
+      function getNamePromise() {
+        return new Promise(function (resolve, reject) {
+          resolve("dodi renaldi promise manual");
+        });
+      }
+
+      getNamePromise().then((name) => console.log(name));
+      // cara ini ialah cara manual menggunakan promise manual
+
+      //   cara menggunakan async => promisenya akan di buatkan otomatis
+
+      async function getNameAsync() {
+        return "Dodi renaldi Async";
+      }
+
+      getNameAsync().then((name) => console.log(name));
+      //   pemanggilan fungsi ini ialah pemanggilan untuk promise dan kenapa kita panggil seperti memanggil promise karena promisenya sudah di buatkan secara otomatis oleh async
+
+      //   cara menggunakan async => promisenya akan di buatkan otomatis
+    </script>
+  </body>
+</html>

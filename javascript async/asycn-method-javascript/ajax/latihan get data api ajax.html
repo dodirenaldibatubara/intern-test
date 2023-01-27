@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+  </head>
+  <body>
+    <h1 id="header"></h1>
+
+    <script>
+      //  buat object ajax
+
+      const ajax = new XMLHttpRequest();
+
+      // ambil dari source yang di inginkan
+      ajax.open("GET", "https://jsonplaceholder.typicode.com/posts");
+
+      // buat callback untuk mengambil data dari api
+
+      ajax.addEventListener("load", function () {
+        const json = JSON.parse(ajax.responseText);
+
+        const header = document.getElementById("header");
+        header.innerHTML = json.response;
+      });
+      ajax.send();
+    </script>
+  </body>
+</html>

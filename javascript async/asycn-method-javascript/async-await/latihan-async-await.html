@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan mengunakan async await</title>
+  </head>
+  <body>
+    <!-- kita akan membuat kode asyn awai yaitu kode mengambil data dari api dan menampilkannya dengan async await -->
+
+    <h1>Latihan async await</h1>
+
+    <h2 id="data"></h2>
+
+    <script>
+      function getProduct() {
+        const request = new Request("product2.json", {
+          method: "GET",
+        });
+
+        const response = fetch(request);
+
+        return response.then((product) => product.json());
+      }
+
+      getProduct().then((product) => console.log(product));
+
+      //   ambil name product pada getProduct
+
+      async function getProductName() {
+        try {
+          product = await getProduct();
+
+          return product.name;
+        } catch (error) {
+          return "product not found";
+        }
+      }
+
+      getProductName().then((productName) => {
+        document.getElementById("data").innerHTML = productName;
+      });
+    </script>
+  </body>
+</html>
