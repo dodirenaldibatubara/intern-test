@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asycn await</title>
+  </head>
+  <body>
+    <!-- async await digunakan untuk alternatif penulisan then, dan menghendle promise pada kode kita, dimana dengan menggunakan async await kode bisa lebih clean dan juga lebih gampang dalam penulisan kode -->
+    <!-- note : await hanya bisa digunakan pada funtion yang memiliki async method jadi saat mau menggunakan awai kita harus menggunakan method async pada function kita -->
+
+    <script>
+      async function getData() {
+        const request = await fetch("https://pie.dev/get");
+        if (request.ok === false) {
+          return console.log("fetch data gagal");
+        }
+        const json = await request.json();
+        console.log(json);
+      }
+
+      getData();
+    </script>
+  </body>
+</html>
