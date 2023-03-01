@@ -24,7 +24,17 @@
               <label for="exampleInputPassword1" class="form-label"></label>
               <input type="text" class="form-control" id="search" placeholder="search.." />
             </div>
-            <button type="submit" class="btn btn-primary">Search</button>
+            <div>
+              <select id="sort" class="form-select form-select-sm mb-5" aria-label=".form-select-sm example">
+                <option selected>Sort by</option>
+                <option value="1">Highest Rank</option>
+                <option value="2">Lowest rank</option>
+              </select>
+            </div>
+            <div>
+              <button id="btn-favorite" class="btn btn-secondary mb-3">Favorite</button>
+            </div>
+            <button type="submit" class="btn btn-primary px-3">Search</button>
           </form>
         </div>
       </div>
@@ -44,9 +54,10 @@
             <div class="card">
               <img src="3.jpg" class="card-img-top" alt="..." height="400" />
               <div class="card-body">
-                <h5 class="card-title">Avengers</h5>
+                <h5 class="card-title">Avengers</h5>  
                 <h6 class="card-subtitle mb-2 text-muted">8.9</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit modi vel quaerat dignissimos,</p> -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit modi vel quaerat dignissimos,</p>
+              <button class="btn btn-primary like-btn" data-index="${movies.indexOf(item)}">Like <span class="like-count">${likes}</span></button>  -->
       <!-- <a href="#" class="btn btn-primary">Show details</a> -->
       <!-- </div>
             </div>
@@ -66,7 +77,9 @@
     <!-- end jquery -->
 
     <!-- Myscript -->
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <!-- myscript -->
+    <!-- <script src="script-sparation-of-concern.js"></script> -->
+    <script src="local-storage.js"></script>
   </body>
 </html>

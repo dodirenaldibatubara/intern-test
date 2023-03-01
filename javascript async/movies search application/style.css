@@ -22,3 +22,7 @@
     transform: rotate(360deg);
   }
 }
+
+.like-background {
+  background-color: silver !important;
+}
