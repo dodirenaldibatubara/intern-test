@@ -49,7 +49,7 @@ form.addEventListener("submit", function (e) {
 // Get data from API
 async function getData() {
   showLoader();
-
+  
   // Get the search value from the query string
   const searchParams = new URLSearchParams(window.location.search);
   const searchValue = searchParams.get("search") || "";

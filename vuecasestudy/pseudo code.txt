@@ -1,0 +1,45 @@
+-- Buat root component
+-- buat componen card untuk pizza list 
+-- buat component cart untuk menampung card pizza  yang nantinya di pilih user
+-- ambil data dari api
+-- masukkan data ke dalam card pizza yang berisi (gambar, nama pizza, harga, toping)
+
+-- buat fungsi showModal() => jika user klik salah satu card pizza, maka akan muncul kotak dialog untuk
+   menambahkan pilihan beberapa toping dengan checkbox seuai dengan data toping sesuai item yang di klik
+
+kita mengirim paramer dataPizza di bawah untuk mengirim dataPizza yang sudah di pilih dengan card
+-- showModal(selectedItem){
+   * selectedItem ini ialah data 1 card yang di klik user. dan dikirim sebagai parameter
+      pada emit di file card.vue.
+   
+   * buat data kosong untuk menampung data selectedItem. dan masukkan selectedItem
+
+   * munculkan tampilan popUp.
+}
+
+-- didalam kotak dialog ada tombol add to chart
+-- buat fungsi add to chart => card pilihan user dan toping akan masuk ke dalam chart.
+
+kirim emit dari topping.vue
+$emit('addToCart',item,topping){
+
+}
+
+di file app.vue
+buat data pizzaToppings yang nanti di isi dari input user menggunakan v-Model utk mengambil valunya dari checbox (Topping)
+
+addToCart(item, pizzaToppings){
+   isi data pizzaToppings di app.vue dengan pizzaToppings (topping yang di pili user)
+   this.pizzaToppings = pizzaToppings
+
+   tampilkan item dan pizzaToppings
+}
+
+item ialah data 1 pizza secara keseluruhan name price dll.
+
+-- di component chat ada tombol total 
+-- buat fungsi total => menambahkan harga dari seluruh card pizza yang di input user
+
+
+
+clue topping : kirim parameter dadri component child ke parent component
