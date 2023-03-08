@@ -1,5 +1,5 @@
 <template>
-  <div div class="cart bg-[#e7edf3] w-[80%] mt-8 py-10 px-4 mx-auto mb-10">
+  <div div class="cart bg-[#e7edf3] md:w-[80%] mt-8 py-10 px-4 mx-auto mb-10">
     <h2 class="text-4xl font-bold">Cart</h2>
     <div class="mt-6 min-h-[400px]">
       <p v-if="!pizzaOrder.length" class="text-xl">The shopping cart is still empty, click item to add to chart</p>
