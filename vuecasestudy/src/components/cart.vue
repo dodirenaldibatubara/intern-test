@@ -5,23 +5,34 @@
       <p v-if="!pizzaOrder.length" class="text-xl">The shopping cart is still empty, click item to add to chart</p>
 
       <!-- <div v-if="toppingView"> -->
-      <div v-for="(order, index) in pizzaOrder" :key="order.index" class="card mt-5 bg bg-[#ffc700] flex items-center space-x-5 rounded-xl p-3">
+      <div v-for="(order, index) in pizzaOrder" :key="order.index" class="card mt-5 bg bg-[#ffc700] flex items-center space-x-5 rounded-xl px-7 py-4">
         <img src="../assets/image/pizza1.jpg" alt="pizza" class="w-[30%] rounded-lg" />
-        <div class="text-xl flex flex-col items-start justify-around">
-          <div class="flex space-x-14 font-bold">
+        <div class="text-xl flex flex-col items-start justify-around w-full">
+          <div class="flex justify-between font-bold w-full">
             <h5 class="font-bold">{{ order.name }}</h5>
             <h5>Quantity : {{ order.quantity }}</h5>
           </div>
-          <h5 class="font-bold text-lg">Toppings</h5>
-          <div class="flex space-x-2">
-            <p class="text-base" v-for="topping in order.topping" :key="topping.index">{{ topping.name }} ${{ topping.price }}</p>
+          <!-- <h5 class="font-bold text-lg text-start w-full mt-2">Toppings</h5> -->
+
+          <div class="flex justify-between text-start w-full items-center mt-2">
+            <div>
+              <h5 class="text-base" v-for="topping in order.topping" :key="topping.index">{{ topping.name }} ${{ topping.price }}</h5>
+            </div>
+            <div v-if="order.topping == 0" class="text-start m-0 p-0 w-[50%]">
+              <h5 class="text-base text-start m-0 p-0 w-full">No Topping!</h5>
+            </div>
+            <h5 class="font-bold text-[18px]">Toppings : ${{ order.totalTopping }}</h5>
           </div>
-          <h5>toppings total : ${{ order.totalTopping }}</h5>
-          <p class="font-bold">$.{{ order.price }}</p>
-          <div class="flex space-x-8">
-            <h4 class="text-xl font-bold mt-4">Total Pizza : ${{ order.totalPizza }}</h4>
-            <button @click="$emit('cancel', index)" class="bg-[#00b2ff] text-base font-bold px-4 py-2 rounded-md">Cancel</button>
+
+          <div class="flex justify-between w-full items-center">
+            <h5 class="font-bold mt-2 text-[18h5x]">Pizza Price :</h5>
+            <h5 class="font-bold mt-2 text-[18h5x]">$.{{ order.totalPizza }}</h5>
           </div>
+          <div class="flex justify-between w-full">
+            <h4 class="text-[22px] font-bold mt-4">Total Price :</h4>
+            <h4 class="text-[22px] font-bold mt-4">${{ order.totalPizza * order.quantity }}</h4>
+          </div>
+          <button @click="$emit('cancel', index)" class="bg-[#00b2ff] text-base font-bold px-4 py-2 rounded-md mt-3 mx-auto">Cancel</button>
         </div>
       </div>
       <!-- <pre>{{ pizzaOrder }}</pre> -->
@@ -46,20 +57,9 @@ export default {
   methods: {},
 
   computed: {
-    // quantity() {
-    //   // let sameItem = this.pizzaOrder;
-    //   // array ini berguna untuk menampung data yang sama. yang kita cari
-    //   // return sameItem;
-    //   // let duplicateArr = [];
-    //   // for (let i = 0; i < sameItem.length; i++) {
-    //   //   for (let j = i + 1; j < sameItem.length; j++) {
-    //   //     if (JSON.stringify(sameItem[i]) === JSON.stringify(sameItem[j])) {
-    //   //       duplicateArr.push(sameItem[i]);
-    //   //     }
-    //   //   }
-    //   // }
-    //   // return duplicateArr;
-    // },
+    //  totalPrice(){
+    //     let totalPrice =
+    //  },
     total() {
       // console.log(this.pizzaOrder);
       let sum = this.pizzaOrder.reduce((accumulator, object) => {

@@ -10,9 +10,9 @@
 
     <div></div>
 
-    <div class="flex">
+    <div class="grid grid-cols-2">
       <!-- Card Component -->
-      <div class="flex flex-wrap justify-around w-[100%] mt-8">
+      <div class="flex flex-wrap justify-around w-[100%] mt-8 h-[1000px]">
         <card-app v-on:showModal="showModal" v-for="(item, index) in dataPizza" :dataPizza="item" :key="index" class="w-[30%]"></card-app>
       </div>
       <!-- End Card Component -->
@@ -95,14 +95,21 @@ export default {
 
       // tambakan object baru ke dalam object event
       event.totalPizza = totalPizza;
-      // this.totalPizza = totalPizza;
-      // console.log(totalPizza);
+
+      console.log(event);
 
       // ini berfungsi untuk cek apakah data item yang di klik user sudah ada atau belum di dalam pizza Order dengan ara cek index ke berapa jika data nya di temukan.
 
-      const existingPizzaIndex = this.pizzaOrder.findIndex((p) => p.id == event.id && p.topping.toString() == event.topping.toString());
+      // const existingPizzaIndex = this.pizzaOrder.findIndex((p) => p.id == event.id && p.topping.toString() == event.topping.toString());
 
-      console.log(event.topping);
+      const existingPizzaIndex = this.pizzaOrder.findIndex(checkSame);
+
+      function checkSame(p) {
+        return p.id == event.id && p.topping.toString() == event.topping.toString();
+      }
+
+      //  batas
+      // console.log(event.topping);
       console.log(existingPizzaIndex);
 
       // jika indexnya >-1 berarti mulai 0 dst. jika index ada maka item telah di tambahkan dan jalankan perintah ini
