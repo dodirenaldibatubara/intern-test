@@ -1,11 +1,11 @@
 <template>
-  <div div class="cart bg-[#e8ecf9] w-[80%] mt-8 py-10 px-4 mx-auto mb-10">
+  <div div class="cart bg-[#e7edf3] w-[80%] mt-8 py-10 px-4 mx-auto mb-10">
     <h2 class="text-4xl font-bold">Cart</h2>
     <div class="mt-6 min-h-[400px]">
       <p v-if="!pizzaOrder.length" class="text-xl">The shopping cart is still empty, click item to add to chart</p>
 
       <!-- <div v-if="toppingView"> -->
-      <div v-for="(order, index) in pizzaOrder" :key="order.index" class="card mt-5 bg bg-[#ffc700] flex items-center space-x-5 rounded-xl px-7 py-4">
+      <div v-for="(order, index) in pizzaOrder" :key="order.index" class="card mt-5 bg bg-[#ffd43a] flex items-center space-x-5 rounded-xl px-7 py-4">
         <img src="../assets/image/pizza1.jpg" alt="pizza" class="w-[30%] rounded-lg" />
         <div class="text-xl flex flex-col items-start justify-around w-full">
           <div class="flex justify-between font-bold w-full">
@@ -32,7 +32,7 @@
             <h4 class="text-[22px] font-bold mt-4">Total Price :</h4>
             <h4 class="text-[22px] font-bold mt-4">${{ order.totalPizza * order.quantity }}</h4>
           </div>
-          <button @click="$emit('cancel', index)" class="bg-[#00b2ff] text-base font-bold px-4 py-2 rounded-md mt-3 mx-auto">Cancel</button>
+          <button @click="$emit('cancel', index)" class="bg-[#27b0eb] text-base font-bold px-4 py-2 rounded-md mt-4 mx-auto">Cancel</button>
         </div>
       </div>
       <!-- <pre>{{ pizzaOrder }}</pre> -->

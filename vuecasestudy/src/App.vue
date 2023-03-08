@@ -12,7 +12,7 @@
 
     <div class="grid grid-cols-2">
       <!-- Card Component -->
-      <div class="flex flex-wrap justify-around w-[100%] mt-8 h-[1000px]">
+      <div class="flex flex-wrap justify-around w-[100%] mt-8 h-[1000px] gap-2">
         <card-app v-on:showModal="showModal" v-for="(item, index) in dataPizza" :dataPizza="item" :key="index" class="w-[30%]"></card-app>
       </div>
       <!-- End Card Component -->
